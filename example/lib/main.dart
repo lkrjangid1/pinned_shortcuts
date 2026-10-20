@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:pinned_shortcuts/pinned_shortcuts.dart';
+import 'package:pinned_shortcuts/flutter_pinned_shortcuts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

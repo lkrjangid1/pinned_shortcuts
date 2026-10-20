@@ -37,10 +37,7 @@ class FlutterPinnedShortcuts {
         case 'onShortcutClick':
           final returnData = call.arguments as Map;
           debugPrint('Shortcut clicked: $returnData');
-          _shortcutClickController.add({
-            "id": returnData['shortcut_id'],
-            "extraData": jsonDecode(returnData['shortcut_data'])
-          });
+          _shortcutClickController.add(returnData);
           break;
         default:
           debugPrint('Unknown method call: ${call.method}');
@@ -57,6 +54,15 @@ class FlutterPinnedShortcuts {
       return await _channel.invokeMethod('isSupported') ?? false;
     } catch (e) {
       return false;
+    }
+  }
+
+  /// Get cold start shortcut intent data.
+  static Future<Map<dynamic, dynamic>?> getInitialShortcut() async {
+    try {
+      return await _channel.invokeMethod('getInitialShortcut');
+    } catch(_) {
+      return null;
     }
   }
 

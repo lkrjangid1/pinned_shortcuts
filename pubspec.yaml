@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   path_provider: ^2.0.11
-  http: ^0.13.5
+  http: ^1.2.1
   path: ^1.8.2
 
 dev_dependencies:
