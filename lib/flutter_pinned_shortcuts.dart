@@ -60,6 +60,15 @@ class FlutterPinnedShortcuts {
     }
   }
 
+  /// Get cold start shortcut intent data.
+  static Future<Map<dynamic, dynamic>?> getInitialShortcut() async {
+    try {
+      return await _channel.invokeMethod('getInitialShortcut');
+    } catch(_) {
+      return null;
+    }
+  }
+
   /// Create a pinned shortcut with various image source options.
   ///
   /// Parameters:
