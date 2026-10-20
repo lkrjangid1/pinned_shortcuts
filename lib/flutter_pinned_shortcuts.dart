@@ -37,10 +37,7 @@ class FlutterPinnedShortcuts {
         case 'onShortcutClick':
           final returnData = call.arguments as Map;
           debugPrint('Shortcut clicked: $returnData');
-          _shortcutClickController.add({
-            "id": returnData['shortcut_id'],
-            "extraData": jsonDecode(returnData['shortcut_data'])
-          });
+          _shortcutClickController.add(returnData);
           break;
         default:
           debugPrint('Unknown method call: ${call.method}');
